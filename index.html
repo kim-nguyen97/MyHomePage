@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Kim Nguyễn Homepage</title>
+  <title>Kim Nguyễn Homepage</title>
 
   <!-- Google Fonts: Serif for titles, Sans-serif for body -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -150,7 +150,8 @@
     }
 
     /* Section Typography */
-    section {
+    section,
+    article {
       margin-bottom: 2.5rem;
       scroll-margin-top: 4rem;
     }
@@ -228,6 +229,14 @@
       color: #444444;
     }
 
+    .entry-desc p:first-child {
+      margin-bottom: 0;
+    }
+
+    .entry-desc p:last-child {
+      margin-bottom: 0;
+    }
+
     .entry-img {
       max-width: 100%;
       height: auto;
@@ -236,17 +245,34 @@
       border-radius: 6px;
     }
 
+    .entry-img--flush {
+      margin-top: 0;
+    }
+
+    /* Project Tools */
+    .project-tools {
+      margin-top: 0.9rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+
+    .project-tools strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
     /* Skills Grid */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.5rem;
     }
 
     .skill-box {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
-      padding: 0.85rem 1rem;
+      padding: 1rem 1.25rem;
       border-radius: 6px;
     }
 
@@ -309,13 +335,14 @@
       </div>
       <div class="profile-info">
         <h1 class="profile-name">Ngọc Thiên Kim Nguyễn</h1>
-        <div class="profile-title">Master's Student in Computational Biology</div>
-        <div class="profile-affiliation">Julius-Maximilians-Universität Würzburg </div>
+        <div class="profile-title">M.Sc. in Computational Biology</div>
+        <div class="profile-affiliation">Julius-Maximilians-Universität Würzburg</div>
 
         <div class="contact-links">
           <a href="mailto:kimm.ngnt@gmail.com">kimm.ngnt@gmail.com</a>
           <a href="https://www.linkedin.com/in/kimnguyen9799/" target="_blank" rel="noopener">LinkedIn</a>
           <a href="https://github.com/kim-nguyen97" target="_blank" rel="noopener">GitHub</a>
+          <a href="./static/pdf/NguyenKim_Resume.pdf" target="_blank" rel="noopener">Download myCV</a>
         </div>
       </div>
     </header>
@@ -325,96 +352,111 @@
       <ul class="nav-list">
         <li><a href="#about">About</a></li>
         <li><a href="#education">Education</a></li>
-        <!-- <li><a href="#experience">Experience</a></li> -->
-        <li><a href="#research">Research & Projects</a></li>
+        <li><a href="#research">Research & Experience</a></li>
         <li><a href="#skills">Skills</a></li>
       </ul>
     </nav>
 
     <!-- ABOUT SECTION -->
-    <article class="about active" data-page="about">
+    <article id="about">
+      <h2 class="section-title">About Me</h2>
 
-  <header>
-    <h2 class="h2 article-title">About Me</h2>
-  </header>
+      <blockquote class="about-quote">
+        “Data analysis isn't just about rendering cool graphs, but about decoding the whole biological picture hidden behind it.”
+      </blockquote>
 
-  <section class="about-text">
-    <blockquote class="about-quote">
-        “Bioinformatics isn't just about rendering cool graphs, but about decoding the whole biological picture hidden behind it.”
-    </blockquote>
-    <p>
+      <p>
         I mainly speak R, and I enjoy working with omics data analysis and RNA biology.
-    </p>
+      </p>
 
-    <p>
-        I'm always eager to adapt to new cutting-edge technologies (Nextflow, PyTorch, etc.) and apply Machine Learning techniques in biological research.
-    </p>
-  </section>
-</article>
+      <p>
+        I'm always eager to adapt to new cutting-edge technologies (Nextflow, PyTorch, etc.) and apply Machine Learning in biological and clinical research.
+      </p>
+    </article>
 
     <!-- EDUCATION SECTION -->
     <section id="education">
       <h2 class="section-title">Education</h2>
       <div class="entry-list">
         <div class="entry-item">
-          <div class="entry-date">Present</div>
+          <div class="entry-date">2023 - Present</div>
           <div>
             <div class="entry-title">M.Sc. in Computational Biology</div>
             <div class="entry-sub">Julius-Maximilians-Universität Würzburg, Germany</div>
             <div class="entry-desc">
-              GPA: 1.7/4.0 
+              GPA: 1.7/4.0
             </div>
-            <div class="entry-item">
+          </div>
+        </div>
+
+        <div class="entry-item">
           <div class="entry-date">2017 - 2022</div>
           <div>
             <div class="entry-title">B.Sc. in Biotechnology</div>
             <div class="entry-sub">International University, Vietnam National University, HCMC - Vietnam</div>
             <div class="entry-desc">
               GPA: 1.8/4.0
-      </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- EXPERIENCE SECTION -->
-    <!-- <section id="experience">
-      <h2 class="section-title">Research & Professional Experience</h2>
-      <div class="entry-list">
-        <div class="entry-item">
-          <div class="entry-date">Present</div>
-          <div>
-            <div class="entry-title">Computational Biology Intern & Master's Thesis Student</div>
-            <div class="entry-sub">Julius-Maximilians-Universität Würzburg</div>
-            <div class="entry-desc">
-              Analyzing RNA-binding proteins (RBPs) and high-throughput transcriptomics datasets to map regulatory post-transcriptional networks.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
-    <!-- RESEARCH & PROJECTS SECTION -->
+    <!-- RESEARCH & EXPERIENCE SECTION -->
     <section id="research">
-      <h2 class="section-title">Research & Projects</h2>
+      <h2 class="section-title">Research & Experience</h2>
       <div class="entry-list">
-        
+
+        <!-- Master's Thesis -->
         <div class="entry-item">
-          <div class="entry-date">Present</div>
+          <div class="entry-date">Nov. 2025 - Jul. 2026</div>
           <div>
-            <div class="entry-title">Computational Biology Intern & Master's Thesis Student</div>
+            <div class="entry-title">Master's Thesis</div>
             <div class="entry-sub">Theodor Boveri Institute, Julius-Maximilians-Universität Würzburg</div>
             <div class="entry-desc">
-              describe
+              <p><strong>Title:</strong> Characterisation of the RNA Binding Behaviour of the RNA-Binding Protein MATRIN3 in Murine Cells</p>
+              <p><strong>Grade:</strong> 1.3/4.0</p>
             </div>
-            <img src="./static/images/HyperTRIBE-workflow.png" alt="HyperTRIBE workflow" class="entry-img" loading="lazy">
+            <img src="./static/images/HyperTRIBE-workflow.png" alt="HyperTRIBE workflow" class="entry-img entry-img--flush" loading="lazy">
+
+            <div class="project-tools">
+              <strong>Tools & Packages:</strong>
+              R · Bioconductor · DESeq2 · GenomicRanges · PureCLIP · BindingSiteFinder · IGV
+            </div>
+
+            <div class="project-tools">
+              <strong>Methods:</strong>
+              HyperTRIBE · iCLIP · bulk RNA-seq · Feature modeling · Regression-based modeling · Differential expression analysis · GO enrichment analysis
+            </div>
+
+            <div class="project-tools">
+              <strong>Research Areas:</strong>
+              RNA-binding proteins · RNA editing computational workflow · Post-transcriptional regulation
+            </div>
           </div>
         </div>
 
+        <!-- U2AF2 Intern -->
         <div class="entry-item">
-          <div class="entry-date">Bioinformatics</div>
+          <div class="entry-date">Apr - Sep. 2025</div>
           <div>
-            <div class="entry-title">Scalable Nextflow Omics Workflows</div>
-            <div class="entry-desc">
-              Built reproducible, containerized pipeline solutions using Nextflow, Docker, and Bash to streamline large-scale biological data processing and statistical analysis.
+            <div class="entry-title">Computational RNA Biology Intern</div>
+            <div class="entry-sub">Theodor Boveri Institute, Julius-Maximilians-Universität Würzburg</div>
+            <img src="./static/images/U2AF2-result.png" alt="U2AF2 results" class="entry-img" loading="lazy">
+
+            <div class="project-tools">
+              <strong>Tools & Environments:</strong>
+              FastQC · MultiQC · Trimmomatic · STAR · HTSeq-count · featureCounts · R · DESeq2 · MAJIQ · VOILA · IGV · Linux · Bash · HPC/Slurm
+            </div>
+
+            <div class="project-tools">
+              <strong>Methods:</strong>
+              Differential gene expression analysis · Alternative splicing analysis · RNA-seq data processing and quality control · GO enrichment analysis · Clustering & correlation analysis
+            </div>
+
+            <div class="project-tools">
+              <strong>Research Areas:</strong>
+              Alternative splicing · RNA-seq data analysis · RNA regulation
             </div>
           </div>
         </div>
@@ -426,27 +468,42 @@
     <section id="skills">
       <h2 class="section-title">Technical Expertise</h2>
       <div class="skills-grid">
-        
         <div class="skill-box">
           <h4>Programming</h4>
-          <p>R, HTML, CSS, Python, Bash, Git</p>
+          <p>R, Shell/Bash, Python</p>
         </div>
 
         <div class="skill-box">
-          <h4>Data Analysis</h4>
-          <p>DESeq2, MAJIQ, IGV</p>
+          <h4>Bioinformatics & Data Analysis</h4>
+          <p>DESeq2, MAJIQ, IGV, Bioconductor, GenomicRanges, PureCLIP, BindingSiteFinder, BLAST</p>
         </div>
 
         <div class="skill-box">
-          <h4>Workflow Automation</h4>
-          <p>Nextflow, Bash, Git</p>
+          <h4>Computing</h4>
+          <p>Git, Nextflow, Linux/HPC, Slurm, Conda</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEARCH INTERESTS SECTION -->
+    <section id="interests">
+      <h2 class="section-title">Research Interests</h2>
+      <div class="skills-grid">
+        <div class="skill-box">
+          <h4>Biological data mining</h4>
         </div>
 
         <div class="skill-box">
-          <h4>Domain Specializations</h4>
-          <p>RNA-seq Analysis, RNA-Binding Proteins, Differential Expression</p>
+          <h4>Omics data analysis</h4>
         </div>
 
+        <div class="skill-box">
+          <h4>RNA Biology</h4>
+        </div>
+
+        <div class="skill-box">
+          <h4>Systems Biology</h4>
+        </div>
       </div>
     </section>
 
